@@ -1,0 +1,25 @@
+PROBLEMAS ENFRENTADOS
+
+- Uno de los primeros problemas encontrados fue el formato de la fecha, ya que la clase LocalDate no maneja los datos en el formato dd/MM/yyyy.
+Para solucionar esto tuve que buscar en mi caso en el chatGPT, donde entendi que utilizando DateTimeFormatter podía formatear el estilo de fecha que queria manejar. 
+Tuve que aplicar esto a la carga de datos, al realizar su comprobación y a la lectura de los mismos en la interfaz. 
+
+- Otro problema que enfrenté fue que quería mostrar varias opciones elegibles y funcionales para la interfaz del usuario y solamente conocia el JOptionPane con la opción de solicitar un dato o mostrar información. 
+Para esto, tambien con ayuda del chat, logre encontrar una forma en la que a travez de un vector que contenga las opciones, podia mostrar al usuario la opcion a elegir e identificar la posición en el vector correspondiente al dato seleccionado.
+Una vez logrado esto, dependiendo de la opción seleccionada por el usuario, podía decidir las diferentes acciones que quería realizar. 
+
+- Con respecto al botón Mostrar Datos, tuve que buscar la forma de que si la lista aún no tuviera datos, el mensaje mostrado sea ese y no una lista vacía. 
+Solucioné esto con una bandera en la carga de datos, es decir, al cargar al menos un dato, esta bandera se volvia verdadera lo que permitia mostrar los datos cargados. Si la bandera era falsa, es decir que ningún dato se cargó aún, este if no se ejecutaba. 
+
+- Otra cosa respecto a mostrar datos era que yo quería guardar todos los datos recorridos del array en alguna variable para después mostrarlo por un panel.
+Para esto se utilizó un StringBuilder que utiliza apéndices para ir anexando todos los datos cargados a una variable tipo String para luego poder mostrarla. 
+
+- Acerca de la carga de datos, particularmente la carga del nombre y apellido, tuve que comprobar no solamente que el dato esté vacío, sino que no sea nulo ya que al utilizar la interfaz que elegí y dependiendo el botón que el usuario presionara, esto podía suceder. 
+para esto simplemente comparé las variables nombre y apellido con una variable "", y tambien comparándola con null, todo esto con un if.
+Si pasaban la prueba ahi se ejecuta una ventana que permite al usuario validar los datos, en caso contrario manejaba un mensaje de error.
+
+
+- En referencia a la carga del Dni se sumó la cantidad de caractéres que se manejaron con otra validación utilizando .lenght().
+
+- Sobre el parseo del Dni y de la fecha fue un poco dificultoso porque tambien podia existir la posibilidad de que se carguen mal los datos (por ejemplo, una letra en el documento) por lo que tuve que manejar la excepción previamente antes de realizar las demás comparaciones.
+  

@@ -1,0 +1,21 @@
+Para explicar las funcionalidades del trabajo, voy a ir desarrollando desde la clase Main. 
+En la clase main se crea un Inicializador para dejar más limpia la clase y que la lógica se desarrolle en las demás clases. 
+En la línea 7 se ejecuta el método iniciar de la clase Inicializador. 
+
+En la clase inicializador se comienza creando todos los Objetos a utilizar.
+Los booleanos flag y carga nos sirven como banderas para ejecutar o no ciertas funcionalidades. 
+Primeramente se crea un vector de tipo String en la línea 17 que contiene las opciones que quiero que el usuario pueda visualizar en la interfaz. 
+Vemos que la interfaz se realizará siempre que flag tenga el valor true en la línea 19. 
+Solo tomará el valor false en la línea 58 y 63 que representan en el Vector el valor "Salir" y en la interfaz la cruz o botón de cierre. 
+Por cuestiones prácticas comenzaré explicando que sucede al presionar el botón "Mostrar Datos" que representa el case 1 de la línea 39. 
+lo primero que notamos es que si carga es false, nos tirará un mensaje de error línea 51. 
+El único caso que carga se vuelve verdadero es cuando pasamos por la línea 36, es decir, cuando cargamos alguna persona. 
+Entre la linea 41 y 49 se puede ver la carga de la lista de personas a una variable llamada mensaje que luego es mostrada con un panel (todo esto esta explicado en la sección de problemas que tuve que resolver)
+En la línea 33 vemos lo que sucede al elegir la opción "Ingresar datos", se le asigna el valor a Persona llamando a una funcion llamada crearPersona. 
+Si en esta función algun dato no se carga correctamente, el nombre de la persona se asigna como "", utilizando esto como un filtro para guardar este nuevo valor de la persona o no. 
+
+En la Clase Persona además de los constructores en linea 16 y 24 y los getters y setters, notamos que a partir de la linea 60 hay diferentes métodos que son llamados desde diferentes partes de la aplicación. 
+El método crear persona primeramente solicita los datos al usuario para luego validarlos a traves de la funcion validarDatosIngresados (linea 69 y linea 115)
+validarDatosIngresados corrobora que no haya ningun dato nulo, vació y que los datos esten cargados de forma correcta por el usuario para recien ahi continuar con la linea 71. 
+Aquí se guardan los datos para que el usuario los valide, esto se produce en la linea 74 donde aparece validarPersona, método que comienza en la linea 86.
+Si la persona es validada por el usuario, se realiza el guardado de la persona en la lista, sino, como mencionamos anteriormente se le asigna el nombre como "" para que no se realice el guardado de dicha persona.  
