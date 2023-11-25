@@ -57,13 +57,6 @@ public class Persona {
         this.fecha = fecha;
     }
 
-    public void mostrarDatos() {
-        System.out.println("El nombre es: " + getNombre());
-        System.out.println("El apellido es: " + getApellido());
-        System.out.println("El DNI es: " + getDni());
-        System.out.println("La fecha de nacimiento es: " + getFecha().format(formato));
-    }
-
     public Persona crearPersona() {
         Persona pers = new Persona();
         boolean personaFlag = true;
